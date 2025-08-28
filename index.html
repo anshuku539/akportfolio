@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anshu Kumar | Web Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <header>
+        <nav>
+            <div class="logo-group">
+                <button class="hamburger-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <img src="photo/profile img.png" alt="Anshu Kumar Logo" class="logo-img">
+                <div class="logo">Anshu Kumar</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact" >Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-text">
+                <h1 id="typing-text">Hi, I'm Anshu</h1>
+                <p class="subtitle">A Creative Web Developer building beautiful and functional websites.</p>
+                <a href="#projects" class="cta-button">View My Work</a>
+            </div>
+        </section>
+
+        <section id="about" class="fade-in">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <img src="photo/profile.jpg" alt="Your Profile Picture" class="profile-pic">
+                <div class="about-text">
+                    <p>Hello! I'm a passionate developer with a love for creating clean code and user-friendly experiences. <br>I specialize in the MERN stack but I'm always eager to learn new technologies.</p>
+                    <h3>My Skills</h3>
+                    <div class="skills">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>C & C++</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--<section id="testimonials" class="fade-in">
+            <h2>What My Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <img src="https://i.pravatar.cc/100?u=client1" alt="Client 1 Photo">
+                    <blockquote>
+                        "Anshu delivered a fantastic website that exceeded our expectations. His        attention to detail and creative vision are truly exceptional. Highly   recommended!"
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <h4>John Doe</h4>
+                        <p>CEO, Tech Solutions</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://i.pravatar.cc/100?u=client2" alt="Client 2 Photo">
+                    <blockquote>
+                        "Working with Anshu was a breeze. He is a great communicator and a highly       skilled developer. Our project was completed on time and on budget."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <h4>Jane Smith</h4>
+                        <p>Marketing Head, Creative Minds</p>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+        <section id="projects" class="fade-in">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="photo/shop banner.jpg" alt="Project 1 Screenshot">
+                    <div class="project-info">
+                        <h3>E-commerce Website</h3>
+                        <p>A fully functional e-commerce platform built with React and Node.js.</p>
+                        <a href="https://www.makelots.com/product/business-pro-website/?gad_source=1&gad_campaignid=20764521813&gbraid=0AAAAAqc7yp0JOY9izKiDk0ayZ04ZU-EVa&gclid=Cj0KCQjw-ZHEBhCxARIsAGGN96L22n6VBS-5QOr_ngT8dXDhCPP3K3YaUMbUA9je61Voimkf4uZ2NTkaAve1EALw_wcB" class="project-link" target="_blank">Live Demo &rarr;</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="photo/taskmng'.webp" alt="Project 2 Screenshot">
+                    <div class="project-info">
+                        <h3>Task Management App</h3>
+                        <p>A simple and intuitive app to manage your daily tasks. Built with vanilla JS.</p>
+                        <a href="#" class="project-link" target="_blank">Live Demo &rarr;</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="photo/portfolio.webp" alt="Project 3 Screenshot">
+                    <div class="project-info">
+                        <h3>Portfolio Template</h3>
+                        <p>A responsive and modern portfolio template designed with CSS Grid.</p>
+                        <a href="https://www.canva.com/en_in/" class="project-link" target="_blank">Live Demo &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="credentials" class="fade-in">
+            <h2>My Credentials</h2>
+            <p>My academic and professional documents are available upon request for verification.</p>
+            <div class="credentials-grid">
+        
+                <div class="credential-item">
+                    <h3>10th Grade Marksheet</h3>
+                    <p>Verified (Private)</p>
+                </div>
+
+                <div class="credential-item">
+                    <h3>12th Grade Marksheet</h3>
+                    <p>Verified (Private)</p>
+                </div>
+
+                <a href="photo/Resume Anshu.pdf" target="_blank" class="credential-item-link">
+                    <div class="credential-item">
+                        <h3>Curriculum Vitae (CV)</h3>
+                        <p>Click to View</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+        <section id="contact" class="fade-in">
+            <h2>Get In Touch</h2>
+            <p>Have a project in mind or just want to say hello? Fill out the form below.</p>
+    
+            <form id="contact-form" action="https://formspree.io/f/mjkoelvr" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+            <div id="form-status"></div>
+        </section>               
+    </main>
+
+    <!-- ======================= FOOTER CODE ======================= -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <footer class="site-footer">
+
+        <div class="footer-main">
+            <div class="footer-brand">
+                <img src="photo/profile img.png" alt="Anshu Kumar Logo" class="footer-logo">
+                <h2>Anshu Kumar</h2>
+                <p class="footer-tagline">Creative Web Developer | MERN Stack Specialist</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <ul>
+                <li><i class="fas fa-envelope"></i> <a href="mailto:anshuku539@gmail.com">anshuku539@gmail.com</a></li>
+                <li><i class="fas fa-phone"></i> <a href="tel:+91 9128086913">+91 9128XXXXXX</a></li>
+                <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/anshukumar539" target="_blank">LinkedIn</a></li>
+            </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#credentials">Credentials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Me</h3>
+                <div class="social-icons">
+                    <a href="https://x.com/AnshuKu04432837" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/sky_ansh_18/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/in/anshukumar539" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Anshu Kumar. Portfolio Website. All rights reserved.</p>
+        </div>
+    </footer>   
+
+    <!-- ======================= FOOTER CODE END ======================= -->
+
+    <script src="script.js"></script>
+</body>
+</html>

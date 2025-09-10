@@ -1,12 +1,7 @@
-/**
- * Main JavaScript file for the portfolio website.
- * Handles animations and interactive elements.
- */
 
-// ==================================================
 // 1. Preloader Logic
-// Hides the preloader once the entire page (including images) is fully loaded.
-// ==================================================
+// Hides the preloader once the entire page is fully loaded.
+
 const preloader = document.getElementById('preloader');
 window.addEventListener('load', () => {
     if (preloader) {
@@ -14,10 +9,8 @@ window.addEventListener('load', () => {
     }
 });
 
-// ==================================================
 // 2. Back to Top Button Logic
 // Shows the button when the user scrolls down 300px from the top.
-// ==================================================
 const backToTopBtn = document.getElementById('back-to-top');
 window.addEventListener('scroll', () => {
     if (backToTopBtn) {
@@ -29,22 +22,20 @@ window.addEventListener('scroll', () => {
     }
 });
 
-
-// ==================================================
 // 3. Main Logic After DOM Content is Loaded
 // This runs after the initial HTML document has been completely loaded and parsed.
-// ==================================================
 document.addEventListener('DOMContentLoaded', function () {
 
-    // --- Hamburger Menu & Dropdown Logic ---
+    // --- Header Navigation Logic (Hamburger & Dropdown) ---
     const hamburger = document.querySelector('.hamburger-menu');
     const navLinks = document.querySelector('.nav-links');
     const dropdown = document.querySelector('.dropdown');
     const connectLink = document.querySelector('.connect-link');
     const dropdownContent = document.querySelector('.dropdown-content');
 
-    // Hamburger Menu Toggle
+    // This block now handles all menu-related logic safely.
     if (hamburger && navLinks) {
+        // Hamburger icon click to toggle mobile menu
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
@@ -68,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-
+    
     // Clickable Dropdown Menu ("Follow Me")
     if (dropdown && connectLink && dropdownContent) {
         connectLink.addEventListener('click', function (event) {
@@ -76,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
             dropdownContent.classList.toggle('active');
         });
 
-        // Close dropdown if clicking outside of it (for desktop)
+        // Close dropdown if clicking outside of it
         window.addEventListener('click', function (event) {
             if (!dropdown.contains(event.target)) {
                 dropdownContent.classList.remove('active');

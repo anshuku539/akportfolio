@@ -1,0 +1,183 @@
+/* 3. Header & Navigation               */
+header {
+    background: var(--header-bg);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 4px 24px rgba(34, 197, 94, 0.08);
+    border-bottom: 1px solid rgba(34, 197, 94, 0.08);
+    border-radius: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 35px;
+    height: 35px;
+    margin-left: 15px;
+    border-radius: 45%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.10);
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(34, 197, 94, 0.2);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 540;
+    padding: 8px 18px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    background: rgba(34, 197, 94, 0.08);
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.12);
+}
+
+.nav-links a.active-link {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.cv-button {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 5px 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 16px rgba(34, 197, 94, 0.18);
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cv-button:hover {
+    background-color: #16a34a;
+    transform: translateY(-2px);
+}
+
+
+
+
+/* Header Mobile Styles                      */
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem 5%;
+    }
+    .logo {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: -300px;
+        width: 170px;
+        height: auto;
+        margin-left: 2px;
+        max-height: calc(100vh - 80px);
+        background: var(--secondary-color);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 10px;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        border-radius: 0 10px 10px 0;
+        overflow-y: auto;
+        transition: left 0.4s ease-in-out;
+        border: 1px solid var(--primary-color);
+    }
+    .nav-links.active {
+        left: 0;
+    }
+    .nav-links li {
+        margin: 5px 0;
+        width: 100%;
+    }
+    .nav-links a {
+        padding: 10px 15px;
+        width: 100%;
+        display: block;
+        text-align: left;
+        box-shadow: none !important;
+        background: none !important;
+    }
+    .nav-links a:hover {
+        background: rgba(34, 197, 94, 0.15) !important;
+        border-radius: 5px;
+    }
+
+    /* CV Button for Mobile */
+    .cv-button {
+        display: block;
+        background-color: var(--primary-color);
+        color: #fff !important;
+        text-align: center;
+        margin-right: 0px;
+        font-size: 12px;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-weight: 60;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+    .cv-button:hover {
+        background-color: #16a34a;
+    }
+    .cv-button i {
+        margin-right: 8px;
+    }
+}

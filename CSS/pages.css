@@ -118,9 +118,9 @@
 
 .about-photo {
     width: 400px;
-    height: auto;
+    height: 550px;
     display: block;
-    margin-left: 90px;
+    margin-left: 100px;
     border-radius: 30px;
     box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
     transition: all 0.4s ease-in-out;
@@ -136,7 +136,7 @@
     flex: 0.7;
     background: var(--secondary-color);
     border-radius: 30px;
-    margin-right: 60px;
+    margin-right: 100px;
     padding: 20px;
     height: 550px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -263,7 +263,7 @@
 
 .credentials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin: 3rem auto 8rem auto;
 }
@@ -286,7 +286,7 @@
 
 .credential-card img {
     width: 100%;
-    height: 180px;
+    height: 240px;
     object-fit: cover;
     opacity: 0.9;
     transition: opacity 0.3s;
@@ -484,6 +484,7 @@
     .about-text {
         flex-basis: auto;
         width: 100%;
+        height: auto;
         margin: 0;
         font-size: 15px;
     }

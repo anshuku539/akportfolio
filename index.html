@@ -5,6 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anshu Kumar | Portfolio</title>
+    
+    <!-- Prevent Theme Flash -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+    
     <link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -39,23 +50,68 @@
         </nav>
     </header>
 
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top-btn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Theme Toggle -->
+    <button id="themeToggle" class="theme-toggle" title="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="hero">
+        <section id="hero" class="hero bg-light">
+            <!-- <div class="hero-background-animation">
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+                <div class="circle-3"></div>
+            </div> -->
+            
             <img src="photo/anshupic.png" alt="Anshu Kumar Profile Picture" class="profile-pic">
 
             <div class="hero-text">
-                <p class="subtitle">Hello, It's Me</p>
-                <h1>Anshu Kumar</h1>
-                <p class="subtitle">And I'm a <span id="typing-text">Fullstack Developer</span></p>
-                <a href="projects.html" class="cta-button">View My Work</a>
+                <p class="subtitle animate-fade-in">Hello, It's Me</p>
+                <h1 class="animate-slide-up">Anshu Kumar</h1>
+                <p class="subtitle animate-fade-in">And I'm a <span id="typing-text">Fullstack Developer</span></p>
+                <div class="hero-buttons">
+                    <a href="projects.html" class="cta-button primary-btn">View My Work</a>
+                    <a href="contact.html" class="cta-button secondary-btn">Get In Touch</a>
+                </div>
                 <div class="hero-social-links">
-                    <a href="https://github.com/anshuku539" target="_blank" rel="noopener" title="GitHub"><i
+                    <a href="https://github.com/anshuku539" target="_blank" rel="noopener" title="GitHub" class="social-icon"><i
                             class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/anshukumar539" target="_blank" rel="noopener" title="LinkedIn"><i
+                    <a href="https://linkedin.com/in/anshukumar539" target="_blank" rel="noopener" title="LinkedIn" class="social-icon"><i
                             class="fab fa-linkedin"></i></a>
                     <a href="https://www.instagram.com/skyasthetic_35/" target="_blank" rel="noopener"
-                        title="Instagram"><i class="fab fa-instagram"></i></a>
+                        title="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Stats Section -->
+        <section class="stats-section fade-in">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <i class="fas fa-code"></i>
+                    <h3 class="stat-number" data-target="50">0</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-certificate"></i>
+                    <h3 class="stat-number" data-target="10">0</h3>
+                    <p>Certifications</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <h3 class="stat-number" data-target="100">0</h3>
+                    <p>Connections</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-coffee"></i>
+                    <h3 class="stat-number" data-target="500">0</h3>
+                    <p>Cups of Coffee</p>
                 </div>
             </div>
         </section>

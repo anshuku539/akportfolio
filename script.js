@@ -196,21 +196,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // --- Functional Contact Form ---
+    // --- Functional Contact Form (JSON Fix) ---
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
+
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
             const form = e.target;
+            
+            // 1. Data ko FormData se nikaal kar JSON Object banao
             const data = new FormData(form);
+            const object = Object.fromEntries(data);
+            const json = JSON.stringify(object);
+
+            formStatus.innerHTML = "Sending...";
+            formStatus.style.color = 'var(--text-color)';
 
             fetch(form.action, {
-                method: form.method,
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
+                method: 'POST',
+                // 2. Ab hum JSON string bhej rahe hain
+                body: json, 
+                headers: { 
+                    'Content-Type': 'application/json', // Server ko batao ye JSON hai
+                    'Accept': 'application/json' 
+                }
+            })
+            .then(response => {
                 if (response.ok) {
-                    formStatus.innerHTML = "Thanks for your message! I'll get back to you soon.";
+                    formStatus.innerHTML = "Thanks! Message sent successfully.";
                     formStatus.style.color = 'var(--primary-color)';
                     form.reset();
                 } else {
@@ -221,10 +235,12 @@ document.addEventListener('DOMContentLoaded', function () {
                             formStatus.innerHTML = "Oops! There was a problem submitting your form.";
                         }
                         formStatus.style.color = 'red';
-                    })
+                    });
                 }
-            }).catch(error => {
-                formStatus.innerHTML = "Oops! There was a problem submitting your form.";
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                formStatus.innerHTML = "Oops! Connection failed. Check internet.";
                 formStatus.style.color = 'red';
             });
         });

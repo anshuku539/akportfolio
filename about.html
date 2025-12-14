@@ -4,18 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anshu Kumar | About</title>
-    
+    <meta name="description"
+        content="Learn more about Anshu Kumar, a BCA student and aspiring Full Stack Web Developer skilled in JavaScript, MERN stack, and web technologies.">
+    <title>About | Anshu Kumar - Aspiring Full Stack Developer</title>
+
     <!-- Prevent Theme Flash -->
     <script>
-        (function() {
+        (function () {
             const theme = localStorage.getItem('theme') || 'dark';
             if (theme === 'light') {
                 document.documentElement.setAttribute('data-theme', 'light');
             }
         })();
     </script>
-    
+
     <link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -42,10 +44,17 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="credentials.html">Credentials</a></li>
+                <li><a href="education.html">Education</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="cv">
-                <a href="photo/cv.pdf" class="cv-button" rel="noopener"><i class="fa-solid fa-download"></i>CV</a>
+                <a href="photo/cv.pdf" class="cv-button" rel="noopener">
+                    <i class="fa-solid fa-download"></i>CV
+                </a>
+                <!-- Theme Toggle -->
+                <button id="themeToggle" class="theme-toggle" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </nav>
     </header>
@@ -55,10 +64,6 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Theme Toggle -->
-    <button id="themeToggle" class="theme-toggle" title="Toggle theme">
-        <i class="fas fa-moon"></i>
-    </button>
 
     <main>
         <!-- About Section -->
@@ -66,7 +71,8 @@
             <h2>About Me</h2>
             <div class="about-container">
                 <div class="about-photo-container">
-                    <img src="photo/about pic.jpg" alt="Anshu Kumar Photo" class="about-photo">
+                    <img src="photo/about-pic.webp" alt="Anshu Kumar Full Stack Web Developer About Photo"
+                        class="about-photo" loading="lazy">
                 </div>
 
                 <div class="about-text">
@@ -84,62 +90,54 @@
 
             <div class="skills-section">
                 <h3>My Skills</h3>
-                <div class="skill-bar-container">
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span>HTML</span>
+                <div class="skills-circle-grid">
+
+                    <div class="skill-circle">
+                        <svg width="120" height="120">
+                            <circle class="bg" cx="60" cy="60" r="54"></circle>
+                            <circle class="progress" cx="60" cy="60" r="54" data-percent="90"></circle>
+                        </svg>
+                        <div class="skill-label">
+                            <h4>HTML</h4>
                             <span>90%</span>
                         </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-fill" data-progress="90"></div>
-                        </div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span>CSS</span>
+
+                    <div class="skill-circle">
+                        <svg width="120" height="120">
+                            <circle class="bg" cx="60" cy="60" r="54"></circle>
+                            <circle class="progress" cx="60" cy="60" r="54" data-percent="85"></circle>
+                        </svg>
+                        <div class="skill-label">
+                            <h4>CSS</h4>
                             <span>85%</span>
                         </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-fill" data-progress="85"></div>
+                    </div>
+
+                    <div class="skill-circle">
+                        <svg width="120" height="120">
+                            <circle class="bg" cx="60" cy="60" r="54"></circle>
+                            <circle class="progress" cx="60" cy="60" r="54" data-percent="60"></circle>
+                        </svg>
+                        <div class="skill-label">
+                            <h4>C & C++</h4>
+                            <span>60%</span>
                         </div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span>JavaScript</span>
+
+                    <div class="skill-circle">
+                        <svg width="120" height="120">
+                            <circle class="bg" cx="60" cy="60" r="54"></circle>
+                            <circle class="progress" cx="60" cy="60" r="54" data-percent="80"></circle>
+                        </svg>
+                        <div class="skill-label">
+                            <h4>JavaScript</h4>
                             <span>80%</span>
                         </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-fill" data-progress="80"></div>
-                        </div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span>C & C++</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-fill" data-progress="75"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span>MongoDB</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-fill" data-progress="70"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span>Python</span>
-                            <span>78%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-fill" data-progress="78"></div>
-                        </div>
-                    </div>
+
                 </div>
+
             </div>
         </section>
     </main>

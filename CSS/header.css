@@ -25,7 +25,8 @@ nav {
 .logo-group {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
+    flex-shrink: 0;
 }
 
 .logo-img {
@@ -144,7 +145,8 @@ nav {
 /* Header Mobile Styles                      */
 @media (max-width: 768px) {
     header {
-        padding: 0.5rem 3%;
+        padding: 0.2rem 3%;
+        width: calc(100% - 20px);
     }
     .logo {
         margin-left: 0;
@@ -199,7 +201,9 @@ nav {
     .cv {
         display: flex;
         align-items: center;
+        flex-shrink: 0;
         gap: 8px;
+        margin-left: auto;
     }
 
     .cv-button {
@@ -208,9 +212,9 @@ nav {
         color: #fff !important;
         text-align: center;
         margin-right: 0px;
-        font-size: 12px;
+        font-size: 11px;
         border-radius: 20px;
-        padding: 8px 16px;
+        padding: 6px 10px;
         font-weight: 600;
         text-decoration: none;
         transition: all 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -229,7 +233,8 @@ nav {
     }
 
     .theme-toggle {
+        display: flex;
         font-size: 1.2rem;
-        padding: 4px;
+        
     }
 }

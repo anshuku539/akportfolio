@@ -10,13 +10,11 @@ window.addEventListener('load', () => {
 });
 
 // 2. Main Logic After DOM Content is Loaded
-// This runs after the initial HTML document has been completely loaded and parsed.
 document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.hamburger-menu');
     const navLinks = document.querySelector('.nav-links');
 
     // ========== Navigation Menu Logic ==========
-    // This block now handles all menu-related logic safely.
     if (hamburger && navLinks) {
         // Hamburger icon click to toggle mobile menu
         hamburger.addEventListener('click', () => {
@@ -43,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ========== Scroll to Top Button ==========
+    // -------- Scroll to Top Button --------
     const scrollTopBtn = document.getElementById('scrollTopBtn');
     if (scrollTopBtn) {
         window.addEventListener('scroll', () => {
@@ -62,10 +60,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ========== Theme Toggle ==========
+    // -------- Theme Toggle ----------
     const themeToggle = document.getElementById('themeToggle');
     const currentTheme = localStorage.getItem('theme') || 'dark';
-    
+
     if (currentTheme === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
         if (themeToggle) {
@@ -88,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ========== Stats Counter Animation ==========
+    // ------------ Stats Counter Animation -------------
     const statNumbers = document.querySelectorAll('.stat-number');
     const statsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -116,22 +114,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 20);
     }
 
-    // ========== Skill Bar Animation ==========
-    const skillBars = document.querySelectorAll('.skill-progress-fill');
-    const skillsObserver = new IntersectionObserver((entries) => {
+    // --------- Skill Bar Animation -----------
+
+    const circles = document.querySelectorAll('.progress');
+
+    const circleObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const progress = entry.target.getAttribute('data-progress');
-                entry.target.style.width = progress + '%';
-                entry.target.classList.add('animate');
-                skillsObserver.unobserve(entry.target);
+                const percent = entry.target.dataset.percent;
+                const offset = 339 - (339 * percent) / 100;
+                entry.target.style.strokeDashoffset = offset;
+                circleObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.5 });
 
-    skillBars.forEach(bar => skillsObserver.observe(bar));
+    circles.forEach(circle => circleObserver.observe(circle));
 
-    // --- Typing Animation (Hero Section) ---
+
+    // --- Typing Animation ---
     const typingTextElement = document.getElementById('typing-text');
     if (typingTextElement) {
         const phrases = ["Fullstack Developer", "Tech Enthusiast"];
@@ -195,8 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // --- Functional Contact Form ---
-    // --- Functional Contact Form (JSON Fix) ---
+    // --- Contect Form ---
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
 
@@ -204,8 +204,8 @@ document.addEventListener('DOMContentLoaded', function () {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
             const form = e.target;
-            
-            // 1. Data ko FormData se nikaal kar JSON Object banao
+
+
             const data = new FormData(form);
             const object = Object.fromEntries(data);
             const json = JSON.stringify(object);
@@ -215,34 +215,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
             fetch(form.action, {
                 method: 'POST',
-                // 2. Ab hum JSON string bhej rahe hain
-                body: json, 
-                headers: { 
-                    'Content-Type': 'application/json', // Server ko batao ye JSON hai
-                    'Accept': 'application/json' 
+                body: json,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 }
             })
-            .then(response => {
-                if (response.ok) {
-                    formStatus.innerHTML = "Thanks! Message sent successfully.";
-                    formStatus.style.color = 'var(--primary-color)';
-                    form.reset();
-                } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            formStatus.innerHTML = data["errors"].map(error => error["message"]).join(", ");
-                        } else {
-                            formStatus.innerHTML = "Oops! There was a problem submitting your form.";
-                        }
-                        formStatus.style.color = 'red';
-                    });
-                }
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                formStatus.innerHTML = "Oops! Connection failed. Check internet.";
-                formStatus.style.color = 'red';
-            });
+                .then(response => {
+                    if (response.ok) {
+                        formStatus.innerHTML = "Thanks! Message sent successfully.";
+                        formStatus.style.color = 'var(--primary-color)';
+                        form.reset();
+                    } else {
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                formStatus.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                            } else {
+                                formStatus.innerHTML = "Oops! There was a problem submitting your form.";
+                            }
+                            formStatus.style.color = 'red';
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    formStatus.innerHTML = "Oops! Connection failed. Check internet.";
+                    formStatus.style.color = 'red';
+                });
         });
     }
 });

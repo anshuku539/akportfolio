@@ -56,7 +56,7 @@ section {
 
 
 
-/* Hero Background Animation */
+/* Hero Background Animation
 .hero-background-animation {
     position: absolute;
     top: 0;
@@ -74,30 +74,6 @@ section {
     animation: float 20s infinite ease-in-out;
 }
 
-.circle-1 {
-    width: 300px;
-    height: 300px;
-    top: 10%;
-    left: 5%;
-    animation-delay: 0s;
-}
-
-.circle-2 {
-    width: 200px;
-    height: 200px;
-    top: 60%;
-    right: 10%;
-    animation-delay: 2s;
-}
-
-.circle-3 {
-    width: 150px;
-    height: 150px;
-    bottom: 10%;
-    left: 40%;
-    animation-delay: 4s;
-}
-
 @keyframes float {
 
     0%,
@@ -110,7 +86,7 @@ section {
         transform: translateY(-30px) scale(1.1);
         opacity: 0.5;
     }
-}
+} */
 
 .hero>* {
     position: relative;
@@ -206,7 +182,7 @@ section {
 
 
 .hero-social-links {
-    margin-top: 0.5rem;
+    margin-top: 2rem;
     margin-left: 5px;
     display: flex;
     justify-content: left;

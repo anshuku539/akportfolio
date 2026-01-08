@@ -54,14 +54,14 @@ nav {
 }
 
 .nav-links li {
-    margin-left: 20px;
+    margin-left: 12px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 540;
-    padding: 8px 18px;
+    padding: 8px 14px;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -71,14 +71,14 @@ nav {
 .nav-links a:hover {
     color: var(--primary-color);
     background: rgba(34, 197, 94, 0.08);
-    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.12);
+    box-shadow: 0 2px 2px rgba(34, 197, 94, 0.12);
 }
 
 .nav-links a.active-link {
     color: var(--primary-color);
     font-weight: 600;
     background: rgba(34, 197, 94, 0.12);
-    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.15);
+    box-shadow: 0 2px 2px rgba(34, 197, 94, 0.15);
 }
 
 .hamburger-menu {
@@ -95,7 +95,7 @@ nav {
     background: linear-gradient(135deg, var(--primary-color) 0%, #10b981 100%);
     color: #fff;
     padding: 8px 22px;
-    margin-right: 20px;
+    margin-right: 12px;
     border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
@@ -117,7 +117,7 @@ nav {
 .cv {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
 }
 
 .theme-toggle {

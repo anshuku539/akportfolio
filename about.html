@@ -8,27 +8,108 @@
         content="Learn more about Anshu Kumar, a BCA student and aspiring Full Stack Web Developer skilled in JavaScript, MERN stack, and web technologies.">
     <title>About | Anshu Kumar - Aspiring Full Stack Developer</title>
 
-    <!-- Prevent Theme Flash -->
-    <script>
-        (function () {
-            const theme = localStorage.getItem('theme') || 'dark';
-            if (theme === 'light') {
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
-        })();
-    </script>
-
-    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="About Anshu Kumar - Full Stack Developer">
+    <meta property="og:description" content="Learn about my journey, skills, and expertise in Full Stack Web Development.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://anshuku539.github.io/akportfolio/photo/about-pic.webp">
+<link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="photo/aklogo.png">
+
+    <style>
+        .open-source-section {
+            padding: 75px 2%;
+            background: rgba(34, 197, 94, 0.05);
+        }
+
+        .open-source-intro {
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            font-size: 1.05rem;
+        }
+
+        .open-source-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .open-source-card {
+            background: var(--secondary-color);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(34, 197, 94, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .open-source-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .open-source-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .open-source-title {
+            color: #fff;
+            margin: 15px 0;
+        }
+
+        .open-source-text {
+            color: #b0b0b0;
+            margin: 10px 0;
+        }
+
+        .open-source-action {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: #000;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .open-source-action:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .open-source-count {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        .open-source-status {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin: 15px 0;
+        }
+    </style>
 </head>
 
 <body>
     <div id="preloader">
         <div class="spinner"></div>
+        <div class="spinner-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
     <header>
         <nav>
@@ -43,19 +124,17 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="credentials.html">Credentials</a></li>
                 <li><a href="education.html">Education</a></li>
+                <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="cv">
                 <a href="photo/cv.pdf" class="cv-button" rel="noopener">
                     <i class="fa-solid fa-download"></i>CV
                 </a>
-                <!-- Theme Toggle -->
-                <button id="themeToggle" class="theme-toggle" title="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
+</div>
         </nav>
     </header>
 
@@ -140,6 +219,40 @@
 
             </div>
         </section>
+
+        <!-- Open Source & GitHub Section -->
+        <section class="fade-in open-source-section">
+            <h2>Open Source & GitHub</h2>
+            <p class="open-source-intro">Passionate about sharing knowledge and contributing to the developer community</p>
+            
+            <div class="open-source-grid">
+                <!-- GitHub Stat Card -->
+                <div class="open-source-card">
+                    <i class="fab fa-github open-source-icon"></i>
+                    <h4 class="open-source-title">GitHub Profile</h4>
+                    <p class="open-source-text">Check out my repositories and contributions</p>
+                    <a href="https://github.com/anshuku539" target="_blank" rel="noopener" class="open-source-action">
+                        Visit GitHub
+                    </a>
+                </div>
+
+                <!-- Contributions Card -->
+                <div class="open-source-card">
+                    <i class="fas fa-code-branch open-source-icon"></i>
+                    <h4 class="open-source-title">Active Repositories</h4>
+                    <p class="open-source-text">Open source projects and learning resources</p>
+                    <p class="open-source-count">10+</p>
+                </div>
+
+                <!-- Community Card -->
+                <div class="open-source-card">
+                    <i class="fas fa-users open-source-icon"></i>
+                    <h4 class="open-source-title">Collaborations</h4>
+                    <p class="open-source-text">Open to contribute and collaborate on projects</p>
+                    <p class="open-source-status">📬 Always Open</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer Section -->
@@ -165,7 +278,7 @@
                 <div class="social-icons">
                     <a href="https://x.com/AnshuKu04432837" target="_blank" rel="noopener" title="Twitter"><i
                             class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/skyasthetic_35/" target="_blank" rel="noopener"
+                    <a href="https://www.instagram.com/its_ansh.sky/" target="_blank" rel="noopener"
                         title="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="https://linkedin.com/in/anshukumar539" target="_blank" rel="noopener" title="LinkedIn"><i
                             class="fab fa-linkedin"></i></a>

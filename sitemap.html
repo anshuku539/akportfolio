@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sitemap and important links to all pages on Anshu Kumar's portfolio website.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Sitemap | Anshu Kumar - Web Developer</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="photo/aklogo.png">
+
+    <style>
+        main {
+            padding: 88px 0 40px;
+        }
+
+        .sitemap-container {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            padding: 24px 2% 40px;
+        }
+
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .sitemap-section {
+            background: var(--secondary-color);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid rgba(34, 197, 94, 0.1);
+        }
+
+        .sitemap-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sitemap-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sitemap-list li {
+            margin-bottom: 12px;
+        }
+
+        .sitemap-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .sitemap-list a {
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .sitemap-list a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .sitemap-header {
+            text-align: center;
+            margin: 0 auto;
+            padding: 24px 2% 10px;
+        }
+
+        .sitemap-header h1 {
+            margin-bottom: 10px;
+        }
+
+        .sitemap-header p {
+            margin: 0;
+            color: #b0b0b0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 72px 0 30px;
+            }
+
+            .sitemap-header {
+                padding: 16px 4% 8px;
+            }
+
+            .sitemap-container {
+                padding: 18px 4% 30px;
+                margin-bottom: 20px;
+            }
+
+            .sitemap-grid {
+                gap: 18px;
+                margin-top: 22px;
+            }
+
+            .sitemap-section {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="spinner"></div>
+        <div class="spinner-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo-group">
+                <button class="hamburger-menu" title="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <img src="photo/aklogo.png" alt="Anshu Kumar Logo" class="logo-img">
+                <div class="logo">Portfolio</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="credentials.html">Credentials</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="cv">
+                <a href="photo/cv.pdf" class="cv-button" rel="noopener">
+                    <i class="fa-solid fa-download"></i>CV
+                </a>
+</div>
+        </nav>
+    </header>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <main>
+        <div class="sitemap-header fade-in">
+            <h1>Sitemap</h1>
+            <p>Quick access to all pages and resources</p>
+        </div>
+
+        <div class="sitemap-container fade-in">
+            <div class="sitemap-grid">
+                <!-- Main Pages -->
+                <div class="sitemap-section">
+                    <h3><i class="fas fa-home"></i> Main Pages</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="index.html"><i class="fas fa-arrow-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-arrow-right"></i> About Me</a></li>
+                        <li><a href="projects.html"><i class="fas fa-arrow-right"></i> Projects</a></li>
+                        <li><a href="contact.html"><i class="fas fa-arrow-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="sitemap-section">
+                    <h3><i class="fas fa-book"></i> Resources</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="blog.html"><i class="fas fa-arrow-right"></i> Blog & Articles</a></li>
+                        <li><a href="education.html"><i class="fas fa-arrow-right"></i> Education</a></li>
+                        <li><a href="credentials.html"><i class="fas fa-arrow-right"></i> Credentials</a></li>
+                        <li><a href="faq.html"><i class="fas fa-arrow-right"></i> FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social & External -->
+                <div class="sitemap-section">
+                    <h3><i class="fas fa-share-alt"></i> Follow & Connect</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="https://github.com/anshuku539" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="https://linkedin.com/in/anshukumar539" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="https://twitter.com/AnshuKu04432837" target="_blank" rel="noopener"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="https://instagram.com/its_ansh.sky/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+
+                <!-- Documents -->
+                <div class="sitemap-section">
+                    <h3><i class="fas fa-file"></i> Documents</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="robots.txt"><i class="fas fa-arrow-right"></i> robots.txt</a></li>
+                        <li><a href="sitemap.xml"><i class="fas fa-arrow-right"></i> sitemap.xml</a></li>
+                        <li><a href="photo/cv.pdf" rel="noopener"><i class="fas fa-arrow-right"></i> Download CV</a></li>
+                        <li><a href="404.html"><i class="fas fa-arrow-right"></i> 404 Page</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <img src="photo/aklogo.png" alt="Anshu Kumar Logo" class="footer-logo">
+                <h2>Anshu Kumar</h2>
+                <p class="footer-tagline">Creative Web Developer | MERN Stack Specialist</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:anshuku539@gmail.com">anshuku539@gmail.com</a></li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+91 9128086913">+91 9128086913</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Me</h3>
+                <div class="social-icons">
+                    <a href="https://x.com/AnshuKu04432837" target="_blank" rel="noopener" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/its_ansh.sky/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/in/anshukumar539" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/anshuku539" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy;2025 Crafted with passion & creativity. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+Sitemap: https://anshuku539.github.io/akportfolio/sitemap.xml
+
+# Crawler Delays
+Crawl-delay: 1
+Request-rate: 30/1m

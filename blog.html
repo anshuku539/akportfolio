@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore Anshu Kumar's technical blog on Web Development, MERN Stack, JavaScript, and Software Engineering Tips.">
+    <title>Blog | Anshu Kumar - Web Development & MERN Stack Articles</title>
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Blog | Anshu Kumar - Web Developer">
+    <meta property="og:description" content="Read articles on Web Development, MERN Stack, JavaScript, and coding best practices.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://anshuku539.github.io/akportfolio/photo/aklogo.png">
+<link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="photo/aklogo.png">
+
+    <style>
+        main {
+            padding-top: 76px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .blog-hero h1 {
+            font-size: 3rem;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .blog-card {
+            background: var(--secondary-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(34, 197, 94, 0.1);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #10b981 100%);
+        }
+
+        .blog-image i {
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .blog-image-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .blog-image-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .blog-image-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .blog-image-4 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .blog-image-5 {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .blog-image-6 {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-date {
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .blog-title {
+            color: #fff;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #808080;
+            font-size: 0.85rem;
+        }
+
+        .blog-category {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s ease;
+        }
+
+        .read-more:hover {
+            gap: 10px;
+        }
+
+        .blog-filters {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .blog-content-section {
+            padding-top: 18px;
+        }
+
+        .filter-btn {
+            padding: 8px 18px;
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            background: transparent;
+            color: var(--text-color);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: #000;
+            border-color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding-top: 56px;
+            }
+
+            .blog-hero {
+                padding: 8px 4% 8px;
+            }
+
+            .blog-hero h1 {
+                font-size: 1.5rem;
+                line-height: 1.2;
+                margin-bottom: 6px;
+            }
+
+            .blog-hero p {
+                font-size: 0.8rem;
+                line-height: 1.4;
+                margin: 0 auto;
+                max-width: 90%;
+            }
+
+            .blog-content-section {
+                padding: 6px 4% 26px;
+            }
+
+            .blog-filters {
+                gap: 8px;
+                margin-bottom: 16px;
+                justify-content: center;
+            }
+
+            .filter-btn {
+                padding: 7px 14px;
+                font-size: 0.82rem;
+                border-radius: 18px;
+            }
+
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+                margin-top: 0;
+            }
+
+            .blog-image {
+                height: 100px;
+            }
+
+            .blog-image i {
+                font-size: 2.2rem;
+            }
+
+            .blog-content {
+                padding: 0.8rem;
+            }
+
+            .blog-date {
+                font-size: 0.65rem;
+                margin-bottom: 6px;
+                gap: 4px;
+            }
+
+            .blog-title {
+                font-size: 0.95rem;
+                margin-bottom: 6px;
+                line-height: 1.3;
+            }
+
+            .blog-excerpt {
+                font-size: 0.7rem;
+                margin-bottom: 8px;
+                line-height: 1.4;
+            }
+
+            .blog-category {
+                font-size: 0.65rem;
+                padding: 3px 8px;
+            }
+
+            .read-more {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                padding-top: 54px;
+            }
+
+            .blog-hero {
+                padding: 6px 4% 6px;
+            }
+
+            .blog-hero h1 {
+                font-size: 1.35rem;
+                margin-bottom: 5px;
+            }
+
+            .blog-hero p {
+                font-size: 0.75rem;
+                line-height: 1.3;
+            }
+
+            .blog-content-section {
+                padding: 4px 4% 22px;
+            }
+
+            .filter-btn {
+                font-size: 0.78rem;
+                padding: 6px 12px;
+            }
+
+            .blog-image {
+                height: 95px;
+            }
+
+            .blog-image i {
+                font-size: 2rem;
+            }
+
+            .blog-content {
+                padding: 0.7rem;
+            }
+
+            .blog-date {
+                font-size: 0.6rem;
+            }
+
+            .blog-title {
+                font-size: 0.88rem;
+            }
+
+            .blog-excerpt {
+                font-size: 0.65rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="spinner"></div>
+        <div class="spinner-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo-group">
+                <button class="hamburger-menu" title="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <img src="photo/aklogo.png" alt="Anshu Kumar Logo" class="logo-img">
+                <div class="logo">Portfolio</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="credentials.html">Credentials</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="cv">
+                <a href="photo/cv.pdf" class="cv-button" rel="noopener">
+                    <i class="fa-solid fa-download"></i>CV
+                </a>
+</div>
+        </nav>
+    </header>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <main>
+        <section class="fade-in blog-hero">
+            <h1>Tech Blog & Articles</h1>
+            <p>
+                Deep dives into Web Development, MERN Stack, JavaScript, and Software Engineering best practices
+            </p>
+        </section>
+
+        <section class="fade-in blog-content-section">
+            <div class="blog-filters">
+                <button class="filter-btn active" data-filter="all">All Articles</button>
+                <button class="filter-btn" data-filter="javascript">JavaScript</button>
+                <button class="filter-btn" data-filter="react">React</button>
+                <button class="filter-btn" data-filter="mern">MERN Stack</button>
+                <button class="filter-btn" data-filter="tips">Tips & Tricks</button>
+            </div>
+
+            <div class="blog-grid">
+                <!-- Blog Card 1 -->
+                <article class="blog-card" data-category="javascript">
+                    <div class="blog-image blog-image-1">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <i class="fas fa-calendar"></i> March 5, 2025
+                        </div>
+                        <h3 class="blog-title">Understanding JavaScript Promises & Async/Await</h3>
+                        <p class="blog-excerpt">Master asynchronous JavaScript with a deep dive into promises, async/await,
+                            error handling, and real-world examples for clean code...</p>
+                        <div>
+                            <span class="blog-category">JavaScript</span>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="blog-card" data-category="react">
+                    <div class="blog-image blog-image-2">
+                        <i class="fas fa-react"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <i class="fas fa-calendar"></i> March 1, 2025
+                        </div>
+                        <h3 class="blog-title">React Hooks: State Management Best Practices</h3>
+                        <p class="blog-excerpt">Explore useState, useEffect, useContext, and custom hooks. Learn how to manage
+                            global state effectively in modern React applications...</p>
+                        <div>
+                            <span class="blog-category">React</span>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="blog-card" data-category="mern">
+                    <div class="blog-image blog-image-3">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <i class="fas fa-calendar"></i> February 26, 2025
+                        </div>
+                        <h3 class="blog-title">Building REST APIs with Node.js & Express</h3>
+                        <p class="blog-excerpt">Complete guide to building scalable REST APIs, authentication, middleware,
+                            error handling, and deployment on cloud platforms...</p>
+                        <div>
+                            <span class="blog-category">MERN Stack</span>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 4 -->
+                <article class="blog-card" data-category="tips">
+                    <div class="blog-image blog-image-4">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <i class="fas fa-calendar"></i> February 20, 2025
+                        </div>
+                        <h3 class="blog-title">10 CSS Tricks for Modern Web Design</h3>
+                        <p class="blog-excerpt">Advanced CSS techniques including Grid, Flexbox, animations, filters, and
+                            variables to create stunning, responsive web designs...</p>
+                        <div>
+                            <span class="blog-category">Tips & Tricks</span>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 5 -->
+                <article class="blog-card" data-category="javascript">
+                    <div class="blog-image blog-image-5">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <i class="fas fa-calendar"></i> February 15, 2025
+                        </div>
+                        <h3 class="blog-title">Debugging JavaScript: Tools & Techniques</h3>
+                        <p class="blog-excerpt">Master browser DevTools, console methods, breakpoints, and debugging strategies
+                            to write bug-free JavaScript applications...</p>
+                        <div>
+                            <span class="blog-category">JavaScript</span>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 6 -->
+                <article class="blog-card" data-category="mern">
+                    <div class="blog-image blog-image-6">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <i class="fas fa-calendar"></i> February 10, 2025
+                        </div>
+                        <h3 class="blog-title">Web Security: JWT & Authentication</h3>
+                        <p class="blog-excerpt">Secure your MERN applications with JWT authentication, password hashing, CORS,
+                            authorization, and protecting against common vulnerabilities...</p>
+                        <div>
+                            <span class="blog-category">MERN Stack</span>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <img src="photo/aklogo.png" alt="Anshu Kumar Logo" class="footer-logo">
+                <h2>Anshu Kumar</h2>
+                <p class="footer-tagline">Creative Web Developer | MERN Stack Specialist</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:anshuku539@gmail.com">anshuku539@gmail.com</a></li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+91 9128086913">+91 9128086913</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Me</h3>
+                <div class="social-icons">
+                    <a href="https://x.com/AnshuKu04432837" target="_blank" rel="noopener" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/its_ansh.sky/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/in/anshukumar539" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/anshuku539" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy;2025 Crafted with passion & creativity. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Blog Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                blogCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = card.getAttribute('data-category') === filterValue ? 'block' : 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

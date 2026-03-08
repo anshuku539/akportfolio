@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Frequently Asked Questions about Anshu Kumar's web development services, skills, and collaboration.">
+    <title>FAQ | Anshu Kumar - Web Developer</title>
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="FAQ | Anshu Kumar - Web Developer">
+    <meta property="og:description"
+        content="Common questions and answers about web development services and collaboration.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://anshuku539.github.io/akportfolio/photo/aklogo.png">
+
+    <link rel="icon" type="image/png" href="photo/aklogo.png">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .faq-page {
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .faq-page::before,
+        .faq-page::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .faq-page::before {
+            width: 280px;
+            height: 280px;
+            background: rgba(34, 197, 94, 0.18);
+            top: 40px;
+            left: -80px;
+        }
+
+        .faq-page::after {
+            width: 220px;
+            height: 220px;
+            background: rgba(16, 185, 129, 0.14);
+            top: 220px;
+            right: -70px;
+        }
+
+        .faq-header,
+        .faq-container {
+            margin-top: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        main {
+            padding-top: 76px;
+        }
+
+        .faq-container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 2%;
+        }
+
+        .faq-item {
+            background: linear-gradient(145deg, rgba(51, 51, 51, 0.96), rgba(36, 36, 36, 0.96));
+            border: 1px solid rgba(34, 197, 94, 0.18);
+            border-radius: 16px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 14px 34px rgba(34, 197, 94, 0.16);
+            border-color: rgba(34, 197, 94, 0.38);
+            transform: translateY(-3px);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 22px;
+            cursor: pointer;
+            background: transparent;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .faq-question:hover {
+            background: rgba(34, 197, 94, 0.08);
+        }
+
+        .faq-question-text {
+            flex: 1;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .faq-icon {
+            color: var(--primary-color);
+            font-size: 1rem;
+            min-width: 30px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(34, 197, 94, 0.15);
+        }
+
+        .faq-toggle {
+            font-size: 1.05rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(34, 197, 94, 0.12);
+        }
+
+        .faq-toggle.active {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+            background: rgba(34, 197, 94, 0.06);
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 18px 22px 22px;
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        .faq-answer-content ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .faq-answer-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(34, 197, 94, 0.5);
+        }
+
+        .faq-answer code {
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--primary-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .faq-header {
+            text-align: center;
+            padding: 60px 2% 40px;
+        }
+
+        .faq-header h1 {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 15px;
+            line-height: 1.15;
+        }
+
+        .faq-header p {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-cta {
+            margin: 28px auto 60px;
+            padding: 26px;
+            max-width: 860px;
+            border-radius: 16px;
+            border: 1px solid rgba(34, 197, 94, 0.22);
+            background: linear-gradient(145deg, rgba(34, 197, 94, 0.14), rgba(16, 185, 129, 0.06));
+            text-align: center;
+        }
+
+        .faq-cta h3 {
+            margin-bottom: 8px;
+        }
+
+        .faq-cta p {
+            color: #b0b0b0;
+            margin-bottom: 16px;
+        }
+
+        .faq-cta .cta-button {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 10px;
+            background: var(--gradient-1);
+            color: #fff;
+            font-weight: 600;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .faq-cta .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding-top: 62px;
+            }
+
+            .faq-page::before {
+                width: 170px;
+                height: 170px;
+                top: 24px;
+                left: -48px;
+            }
+
+            .faq-page::after {
+                width: 140px;
+                height: 140px;
+                top: 170px;
+                right: -36px;
+            }
+
+            .faq-header {
+                padding: 18px 4% 14px;
+            }
+
+            .faq-header h1 {
+                font-size: 1.9rem;
+                line-height: 1.2;
+                margin-bottom: 8px;
+            }
+
+            .faq-header p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                max-width: 92%;
+            }
+
+            .faq-container {
+                padding: 10px 4% 12px;
+                max-width: 100%;
+            }
+
+            .faq-item {
+                margin-bottom: 12px;
+                border-radius: 12px;
+            }
+
+            .faq-question {
+                padding: 14px 15px;
+                font-size: 0.94rem;
+            }
+
+            .faq-question-text {
+                gap: 10px;
+            }
+
+            .faq-icon {
+                font-size: 0.82rem;
+                min-width: 25px;
+                width: 25px;
+                height: 25px;
+            }
+
+            .faq-toggle {
+                font-size: 0.9rem;
+                width: 25px;
+                height: 25px;
+            }
+
+            .faq-answer-content {
+                padding: 11px 15px 15px;
+                font-size: 0.86rem;
+                line-height: 1.55;
+            }
+
+            .faq-cta {
+                margin: 18px 4% 28px;
+                padding: 16px;
+                border-radius: 12px;
+            }
+
+            .faq-cta h3 {
+                font-size: 1.2rem;
+                margin-bottom: 6px;
+            }
+
+            .faq-cta p {
+                font-size: 0.88rem;
+                margin-bottom: 12px;
+            }
+
+            .faq-cta .cta-button {
+                padding: 9px 14px;
+                font-size: 0.86rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                padding-top: 58px;
+            }
+
+            .faq-header {
+                padding: 14px 4% 10px;
+            }
+
+            .faq-header h1 {
+                font-size: 1.55rem;
+                margin-bottom: 6px;
+            }
+
+            .faq-header p {
+                font-size: 0.8rem;
+                line-height: 1.4;
+                max-width: 96%;
+            }
+
+            .faq-container {
+                padding: 8px 4% 10px;
+            }
+
+            .faq-item {
+                margin-bottom: 10px;
+            }
+
+            .faq-question {
+                padding: 12px 13px;
+                font-size: 0.86rem;
+            }
+
+            .faq-question-text {
+                gap: 8px;
+            }
+
+            .faq-icon {
+                font-size: 0.76rem;
+                min-width: 23px;
+                width: 23px;
+                height: 23px;
+            }
+
+            .faq-toggle {
+                font-size: 0.84rem;
+                width: 23px;
+                height: 23px;
+            }
+
+            .faq-answer-content {
+                padding: 10px 13px 13px;
+                font-size: 0.8rem;
+                line-height: 1.45;
+            }
+
+            .faq-cta {
+                margin: 14px 4% 22px;
+                padding: 14px;
+            }
+
+            .faq-cta h3 {
+                font-size: 1.08rem;
+            }
+
+            .faq-cta p {
+                font-size: 0.82rem;
+            }
+
+            .faq-cta .cta-button {
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
+        }
+
+        
+    </style>
+</head>
+
+<body class="faq-page">
+    <div id="preloader">
+        <div class="spinner"></div>
+        <div class="spinner-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo-group">
+                <button class="hamburger-menu" title="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <img src="photo/aklogo.png" alt="Anshu Kumar Logo" class="logo-img">
+                <div class="logo">Portfolio</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="credentials.html">Credentials</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="cv">
+                <a href="photo/cv.pdf" class="cv-button" rel="noopener">
+                    <i class="fa-solid fa-download"></i>CV
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <main>
+        <div class="faq-header fade-in">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about my services and expertise</p>
+        </div>
+
+        <div class="faq-container fade-in">
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <div class="faq-question-text">
+                        <i class="fas fa-briefcase faq-icon"></i>
+                        <span>What services do you offer?</span>
+                    </div>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        I offer comprehensive web development services including:
+                        <ul>
+                            <li>Full Stack Web Development (MERN Stack)</li>
+                            <li>Responsive Web Design</li>
+                            <li>Frontend Development with React</li>
+                            <li>Backend API Development with Node.js</li>
+                            <li>Database Design & Optimization (MongoDB)</li>
+                            <li>Web Performance Optimization</li>
+                            <li>SEO Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <div class="faq-question-text">
+                        <i class="fas fa-code faq-icon"></i>
+                        <span>What technologies do you specialize in?</span>
+                    </div>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, Tailwind CSS, Responsive
+                        Design<br><br>
+                        <strong>Backend:</strong> Node.js, Express.js, REST APIs, JWT Authentication<br><br>
+                        <strong>Database:</strong> MongoDB, MySQL, Firebase<br><br>
+                        <strong>Tools:</strong> Git, GitHub, VS Code, Postman, Webpack, npm<br><br>
+                        <strong>Hosting:</strong> GitHub Pages, Vercel, Netlify, Heroku
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <div class="faq-question-text">
+                        <i class="fas fa-clock faq-icon"></i>
+                        <span>What is your typical project timeline?</span>
+                    </div>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Project timelines vary based on complexity and scope:
+                        <ul>
+                            <li><strong>Small Projects (Landing Pages):</strong> 1-2 weeks</li>
+                            <li><strong>Medium Projects (E-commerce):</strong> 3-6 weeks</li>
+                            <li><strong>Large Projects (Full Stack Apps):</strong> 2-3 months</li>
+                        </ul>
+                        We follow Agile methodology with regular updates and iterations.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <div class="faq-question-text">
+                        <i class="fas fa-dollar-sign faq-icon"></i>
+                        <span>How do you pricing work?</span>
+                    </div>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Pricing depends on project requirements:
+                        <ul>
+                            <li><strong>Hourly Rate:</strong> Contact for consultation</li>
+                            <li><strong>Project-Based:</strong> Custom quotes based on scope</li>
+                            <li><strong>Maintenance Plans:</strong> Monthly subscriptions available</li>
+                        </ul>
+                        I offer flexible payment terms and will provide detailed cost estimation after initial
+                        consultation.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <div class="faq-question-text">
+                        <i class="fas fa-mobile-alt faq-icon"></i>
+                        <span>Do you build responsive websites?</span>
+                    </div>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Absolutely! All my projects are built with mobile-first approach and are fully responsive across
+                        all devices:
+                        <ul>
+                            <li>Mobile (320px and up)</li>
+                            <li>Tablets (768px and up)</li>
+                            <li>Desktop (1024px and up)</li>
+                            <li>Large screens (1440px and up)</li>
+                        </ul>
+                        I test extensively on real devices to ensure perfect user experience.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <div class="faq-question-text">
+                        <i class="fas fa-shield-alt faq-icon"></i>
+                        <span>Do you handle security and data protection?</span>
+                    </div>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Yes, security is a top priority. I implement:
+                        <ul>
+                            <li>JWT Authentication & Authorization</li>
+                            <li>Password Hashing (bcrypt)</li>
+                            <li>HTTPS/SSL Encryption</li>
+                            <li>CORS Security</li>
+                            <li>XSS & CSRF Protection</li>
+                            <li>Input Validation & Sanitization</li>
+                            <li>Regular Security Audits</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <div class="faq-question-text">
+                        <i class="fas fa-cogs faq-icon"></i>
+                        <span>Do you provide maintenance and support?</span>
+                    </div>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Yes! I offer post-launch support including:
+                        <ul>
+                            <li>Bug fixes and patches</li>
+                            <li>Performance optimization</li>
+                            <li>Security updates</li>
+                            <li>Feature enhancements</li>
+                            <li>Technical support</li>
+                            <li>Monthly/Yearly maintenance plans</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 8 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <div class="faq-question-text">
+                        <i class="fas fa-handshake faq-icon"></i>
+                        <span>How do we communicate during the project?</span>
+                    </div>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Communication is key! I provide:
+                        <ul>
+                            <li><strong>Weekly Status Updates:</strong> Progress reports</li>
+                            <li><strong>Email/WhatsApp/LinkedIn:</strong> Quick communication</li>
+                            <li><strong>Video Calls:</strong> For detailed discussions</li>
+                            <li><strong>Project Management:</strong> Using Trello/GitHub issues</li>
+                            <li><strong>Transparent Timeline:</strong> Regular milestone updates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 9 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <div class="faq-question-text">
+                        <i class="fas fa-file-contract faq-icon"></i>
+                        <span>Do you have an NDA for confidential projects?</span>
+                    </div>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Yes, absolutely! I take confidentiality seriously and can sign NDAs for any project. Your
+                        intellectual property and business information will always be kept secure and confidential. I'm
+                        happy to discuss my confidentiality practices in detail.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 10 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <div class="faq-question-text">
+                        <i class="fas fa-envelope faq-icon"></i>
+                        <span>How can I get in touch to discuss a project?</span>
+                    </div>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Reach out to me through:
+                        <ul>
+                            <li><strong>Email:</strong> <a href="mailto:anshuku539@gmail.com">anshuku539@gmail.com</a>
+                            </li>
+                            <li><strong>Phone:</strong> <a href="tel:+919128086913">+91 9128086913</a></li>
+                            <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/anshukumar539"
+                                    target="_blank" rel="noopener">Connect with me</a></li>
+                            <li><strong>Contact Form:</strong> <a href="contact.html">Fill out the contact form</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="faq-cta fade-in">
+            <h3>Still Have a Question?</h3>
+            <p>If you did not find your answer here, feel free to reach out directly and I will help you quickly.</p>
+            <a href="contact.html" class="cta-button">Ask Your Question</a>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+
+            // Close other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== element.parentElement) {
+                    item.querySelector('.faq-answer').classList.remove('active');
+                    item.querySelector('.faq-toggle').classList.remove('active');
+                }
+            });
+
+            // Toggle current FAQ
+            answer.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
